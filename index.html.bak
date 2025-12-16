@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Welcome!</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+  body{
+    background-color:#f7f7f7;margin:0;padding:0;
+    font-family:'Segoe UI',Tahoma,sans-serif}.gr{color:#f7f7f7
+  }
+  #main-message{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 300px;
+    height: 200px;
+  }
+</style>
+</head>
+<body>
+<div id="main-message">
+  <h1>Welcome!</h1>
+</div>
+</body>
+</html>
