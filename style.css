@@ -64,6 +64,38 @@ body {
   to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+.blog-link {
+  position: fixed;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  margin: 0;
+  color: #eaffff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 1.9em;
+
+  text-decoration: none;
+  text-shadow:
+    0 0 8px rgba(35, 240, 255, 0.45),
+    0 0 18px rgba(107, 240, 255, 0.25);
+
+  pointer-events: auto;
+
+  opacity: 0;
+  animation: welcome-in 1.5s ease-out 3.6s forwards;
+}
+
+.blog-link:hover {
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(35, 240, 255, 0.65),
+    0 0 24px rgba(107, 240, 255, 0.45);
+}
+
 .flowers {
   position: relative;
   transform: scale(0.9);
@@ -1017,50 +1049,3 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
-
-/* Изначально блок с блогом полностью скрыт */
-.blog-hidden {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 2.5s ease-in-out, visibility 2.5s;
-    text-align: center;
-    margin-top: 25px; /* Отступ вниз от Welcome! */
-}
-
-/* Этот класс мы включим через JS, когда Welcome! полностью покажется */
-.blog-visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Стили ссылки и её покачивание */
-.blog-floating-link {
-    display: inline-block;
-    font-size: 22px;
-    font-family: inherit;
-    color: #0076ff; /* Красивый синий цвет, можете поменять на свой */
-    text-decoration: none;
-    font-weight: 500;
-
-    /* Сама анимация покачивания: 7 секунд на круг, бесконечно, очень мягко */
-    animation: superSlowWave 7s ease-in-out infinite;
-}
-
-/* Изменение цвета при наведении курсора */
-.blog-floating-link:hover {
-    color: #0052cc;
-}
-
-/* Траектория движения: строго вверх-вниз на 5 пикселей, без наклонов */
-@keyframes superSlowWave {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-5px); /* Медленный подъем вверх */
-    }
-    100% {
-        transform: translateY(0px);  /* Возврат в исходную точку */
-    }
-}
-
