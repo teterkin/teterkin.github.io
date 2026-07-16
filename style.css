@@ -1018,50 +1018,49 @@ body {
   animation-play-state: paused !important;
 }
 
-/* Контейнер для ссылки на блог */
-.blog-container {
-    text-align: center;
-    margin-top: 20px; /* Отступ от надписи Welcome! */
-
-    /* Начальное состояние — полностью прозрачный */
+/* Изначально блок с блогом полностью скрыт */
+.blog-hidden {
     opacity: 0;
-
-    /* Анимация плавного появления */
-    animation: fadeInBlog 2s ease-in-out forwards;
-
-    /* ЗАДЕРЖКА: Появление начнется через 3 секунды.
-       Если ваше Welcome появляется дольше, увеличьте это число (например, до 4s) */
-    animation-delay: 3s;
+    visibility: hidden;
+    transition: opacity 2.5s ease-in-out, visibility 2.5s;
+    text-align: center;
+    margin-top: 25px; /* Отступ вниз от Welcome! */
 }
 
-/* Сама ссылка и ее покачивание */
-.blog-link {
+/* Этот класс мы включим через JS, когда Welcome! полностью покажется */
+.blog-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стили ссылки и её покачивание */
+.blog-floating-link {
     display: inline-block;
-    font-size: 24px;
+    font-size: 22px;
+    font-family: inherit;
+    color: #0076ff; /* Красивый синий цвет, можете поменять на свой */
     text-decoration: none;
-    color: #0076ff; /* Цвет ссылки, измените на свой вкус */
+    font-weight: 500;
 
-    /* Анимация покачивания: длится 6 секунд, бесконечная, плавная */
-    animation: slowSwing 6s ease-in-out infinite;
+    /* Сама анимация покачивания: 7 секунд на круг, бесконечно, очень мягко */
+    animation: superSlowWave 7s ease-in-out infinite;
 }
 
-/* 1. Анимация появления контейнера */
-@keyframes fadeInBlog {
-    to {
-        opacity: 1;
-    }
+/* Изменение цвета при наведении курсора */
+.blog-floating-link:hover {
+    color: #0052cc;
 }
 
-/* 2. Анимация очень медленного движения (вверх-вниз и легкий наклон) */
-@keyframes slowSwing {
+/* Траектория движения: строго вверх-вниз на 5 пикселей, без наклонов */
+@keyframes superSlowWave {
     0% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(0px);
     }
     50% {
-        transform: translateY(-6px) rotate(1deg); /* Движение на 6 пикселей вверх и наклон на 1 градус */
+        transform: translateY(-5px); /* Медленный подъем вверх */
     }
     100% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(0px);  /* Возврат в исходную точку */
     }
 }
 
