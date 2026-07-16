@@ -1017,3 +1017,51 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+
+/* Контейнер для ссылки на блог */
+.blog-container {
+    text-align: center;
+    margin-top: 20px; /* Отступ от надписи Welcome! */
+
+    /* Начальное состояние — полностью прозрачный */
+    opacity: 0;
+
+    /* Анимация плавного появления */
+    animation: fadeInBlog 2s ease-in-out forwards;
+
+    /* ЗАДЕРЖКА: Появление начнется через 3 секунды.
+       Если ваше Welcome появляется дольше, увеличьте это число (например, до 4s) */
+    animation-delay: 3s;
+}
+
+/* Сама ссылка и ее покачивание */
+.blog-link {
+    display: inline-block;
+    font-size: 24px;
+    text-decoration: none;
+    color: #0076ff; /* Цвет ссылки, измените на свой вкус */
+
+    /* Анимация покачивания: длится 6 секунд, бесконечная, плавная */
+    animation: slowSwing 6s ease-in-out infinite;
+}
+
+/* 1. Анимация появления контейнера */
+@keyframes fadeInBlog {
+    to {
+        opacity: 1;
+    }
+}
+
+/* 2. Анимация очень медленного движения (вверх-вниз и легкий наклон) */
+@keyframes slowSwing {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-6px) rotate(1deg); /* Движение на 6 пикселей вверх и наклон на 1 градус */
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
