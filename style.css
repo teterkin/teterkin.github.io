@@ -64,6 +64,11 @@ body {
   to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+@keyframes menu-in{
+  from { opacity: 0; transform: translateX(0) translateY(-6px); }
+  to   { opacity: 1; transform: translateX(0) translateY(0); }
+}
+
 .blog-link {
   position: fixed;
   top: 10vh;
@@ -72,7 +77,6 @@ body {
   z-index: 1000;
 
   margin: 0;
-  margin-bottom: 8px;
   color: #eaffff;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 600;
@@ -88,7 +92,7 @@ body {
   display: block;
 
   opacity: 0;
-  animation: welcome-in 1.5s ease-out 3.6s forwards;
+  animation: menu-in 1.5s ease-out 3.6s forwards;
 }
 
 .about-link {
@@ -114,7 +118,7 @@ body {
   display: block;
 
   opacity: 0;
-  animation: welcome-in 1.5s ease-out 4.6s forwards;
+  animation: menu-in 1.5s ease-out 4.6s forwards;
 }
 
 .blog-link:hover,
